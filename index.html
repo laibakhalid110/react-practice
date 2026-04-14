@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!--1. useEffect
+        2.useStates
+        6.useContext api
+        3.useMemo....value or caculation k liye use hota ha. operation k liye use krte hain.
+        5.usecallback...... functions ko store krne k liye use hota . 2 parameters hain ek arrow function or ek dependency.
+        4.use ref ......value ko change krti ha.use for styling and update the value. jab use interface chnage na hona ho bs value change honi hoo.dom ma use hota ha. this is a hook .
+        dom.js file....
+
+
+        function dom(){
+            let joMari = useref()
+            let jado = ()=>{
+                joMari.current.focus();
+            }
+             return(
+            <input type="text" name="" id="" ref={joMari}/>
+            <button onClick={(jado)}>poyo oil</button>
+        )   
+        }
+        export default Dom;
+        app.js ki file banani ha.... udr import krna ha
+       
+
+    koi function bana ha phr export krna ha or import krna ha. function ma return se phlr hooks bante hain. then create a variable and assign this hook useref.
+    let a=useref()....bydefaut is ma value null ha.
+return se upr ek function banana ha name of function f1. function ma lekhn ha.  
+a.current.focus();
+onclick={f1}; -->
+
+
+<!-- props: like a parameter. props is like a tree... js ko call krwane k liye {} yeh use krte hain..yeh bs kuch file k liye use ho skta ha lkn hm is k alternative use krte hain file to file move krna ho tu props fail ho jate hain....context api,redux....what is prop drilling... pass imformation ki jaye tu usko props drilling kehte hain...parent se super child ma info transfer krwane k liye..
+    1 component k andr 3 files banao like a.js, b.js, c.js... 
+    a.js ma function bana h like ......... b ko a ma import krna ha
+    function a(){
+        return(
+            <>
+            <h1>it is a parent component</h1>
+            </>
+        )
+        export  defaut a;
+    }
+    app.js pr jana ha ab or idr import krwana ha...
+
+    import a from "./components/a";
+    function app(){
+        var message ="laiba";
+        return(
+            <>
+            <a msg = {message}/>
+            </>
+
+        );
+    } 
+    is sb code k bad npm start krna ha taky pta chale k kya error ha ....
+    
+    react fragment is <></>....
+ -->
+ <!--  jo return se upr variable lekhte hain wo locally hote hai  or jo function se bahir lekhte hain us global kehte hain.
+    >>>>>context api:
+ app.js ma lekhna ha .....
+import { createcontext,usestate} from "react";
+import child from "./component/child";
+     export var Globalinfo = createcontext;
+    function app(){
+        var [color, setcolor] = usestate("green");
+        return(
+            <Globalinfo.provider value = {{appcolor:color}}> .......1 {} js k liye or 1 object k liye....
+                <>
+                <h1>app component</h1>
+            </child>
+                </>
+            
+            </Globalinfo.provider>
+        )
+    }
+    child.js banani ha or us ma yeh lekhna ha 
+
+import{usecontext} from "react";
+import{Globalinfo} from "../app";
+function child(){
+    var {appcolor}=usecontext(Globalinfo)
+    return(
+        <>
+        <h1 style ={{color:appcolor}}> this is a child component</h1>
+        </>
+
+    )
+}
+export default child;    
+  -->
+    <input type="text" ref={a}>
+    <button>Click</button>
+</body>
+</html>
